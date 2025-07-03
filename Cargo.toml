@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "bits-link-client",
+    "bits-link-common",
+    "bits-link-relay",
+    "bits-link-server",
+]

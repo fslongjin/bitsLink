@@ -1,0 +1,10 @@
+listen_addr = "0.0.0.0:7000"
+http_proxy_addr = "0.0.0.0:7001"
+
+[websites.demo]
+token = "demo_api_key_123"
+domain = "demo.example.com"
+
+[websites.test]
+token = "test_api_key_456"
+domain = "test.example.com"

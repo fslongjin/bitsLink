@@ -85,31 +85,16 @@ api_key = "ak_website1_xxx"
 domain = "app1.example.com"
 relay_server = "relay-cn-beijing"  # 可选，不配置则支持直连
 
-[websites.website1.client_config]
-local_ip = "127.0.0.1"
-local_port = 8080
-protocol = "http"
-
 [websites.website2]
 api_key = "ak_website2_xxx"
 domain = "app2.example.com"
 relay_server = "relay-cn-shanghai"
-
-[websites.website2.client_config]
-local_ip = "127.0.0.1"
-local_port = 8081
-protocol = "http"
 
 # 支持直连的网站配置示例
 [websites.website3]
 api_key = "ak_website3_xxx"
 domain = "app3.example.com"
 # 不配置 relay_server，表示支持直连
-
-[websites.website3.client_config]
-local_ip = "127.0.0.1"
-local_port = 8082
-protocol = "http"
 ```
 
 ### 3.2 中转服务器 (bits-link-relay)
@@ -177,19 +162,18 @@ ca_file = "ca.crt"
 #### 配置文件结构
 ```toml
 # client.toml
-[client]
 api_key = "ak_website1_xxx"
 website_name = "website1"
-
-[server]
-addr = "server.example.com:7000"
+server_addr = "server.example.com:7000"
+local_addr = "127.0.0.1:8000"
 
 [server.tls]
 enable = true
 ca_file = "ca.crt"
 
 [local_service]
-addr = "127.0.0.1:8080"
+local_ip = "127.0.0.1"
+local_port = 8080
 protocol = "http"
 
 # 路由策略配置（智能选路核心配置）

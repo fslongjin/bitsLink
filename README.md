@@ -58,7 +58,7 @@ Internet ←→ Server ←Cloud Network→ Relay ←→ Client ←→ Internal S
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/fslongjin/bits-link.git
+git clone https://github.com/fslongjin/bitsLink.git
 cd bits-link
 
 # Build all components
@@ -76,6 +76,7 @@ cargo build --release
 ```toml
 [server]
 listen_addr = "0.0.0.0:7000"
+http_proxy_addr = "0.0.0.0:7001"
 
 [server.tls]
 enable = true
@@ -95,12 +96,14 @@ relay_server = "relay-us-west"
 
 **Client Configuration** (`client.toml`):
 ```toml
-[client]
 api_key = "ak_app1_xxx"
 website_name = "app1"
+server_addr = "server.example.com:7000"
 
-[server]
-addr = "server.example.com:7000"
+[local_service]
+local_ip = "127.0.0.1"
+local_port = 8080
+protocol = "http"
 
 [routing]
 mode = "auto"  # direct, relay, or auto
@@ -153,7 +156,7 @@ We welcome contributions from the community! Please read our [Contributing Guide
 ### Development Setup
 ```bash
 # Clone and setup development environment
-git clone https://github.com/fslongjin/bits-link.git
+git clone https://github.com/fslongjin/bitsLink.git
 cd bits-link
 
 # Install development dependencies
@@ -183,7 +186,7 @@ cargo watch -x run
 
 **Expected Timeline**: First stable release targeting Q3 2025.
 
-For development updates and discussions, please check our [Issues](https://github.com/fslongjin/bits-link/issues) and [Discussions](https://github.com/fslongjin/bits-link/discussions) sections.
+For development updates and discussions, please check our [Issues](https://github.com/fslongjin/bitsLink/issues) and [Discussions](https://github.com/fslongjin/bitsLink/discussions) sections.
 
 ## 📄 License
 
@@ -209,6 +212,6 @@ Bits-Link addresses these challenges with:
 
 **Built with ❤️ using Rust**
 
-[Documentation](./docs/) • [Issues](https://github.com/fslongjin/bits-link/issues) • [Discussions](https://github.com/fslongjin/bits-link/discussions)
+[Documentation](./docs/) • [Issues](https://github.com/fslongjin/bitsLink/issues) • [Discussions](https://github.com/fslongjin/bitsLink/discussions)
 
 </div> 

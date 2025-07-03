@@ -1,0 +1,18 @@
+server_addr = "127.0.0.1:7000"
+
+[[websites]]
+website_name = "site1"
+token = "demo_api_key_123"
+local_ip = "127.0.0.1"
+local_port = 8080
+protocol = "http"
+
+[[websites]]
+website_name = "site2"
+token = "test_api_key_456"
+local_ip = "127.0.0.1"
+local_port = 8081
+protocol = "http"
+
+[routing]
+mode = "auto"
